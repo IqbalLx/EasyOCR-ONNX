@@ -1,0 +1,64 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "easyocr-onnx"
+version = "0.1.0"
+description = "Lightweight OCR engine running EasyOCR models via ONNX Runtime — no PyTorch required at runtime"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.12"
+authors = [
+    { name = "Iqbal Maulana" },
+]
+keywords = ["ocr", "onnx", "easyocr", "text-detection", "text-recognition", "onnxruntime"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Image Recognition",
+    "Typing :: Typed",
+]
+dependencies = [
+    "numpy>=2.4.3",
+    "onnxruntime>=1.24.3",
+    "opencv-python-headless>=4.13.0.92",
+]
+
+[project.optional-dependencies]
+pil = ["Pillow>=11.0.0"]
+
+[project.urls]
+Homepage = "https://github.com/IqbalLx/EasyOCR-ONNX"
+Repository = "https://github.com/IqbalLx/EasyOCR-ONNX"
+Issues = "https://github.com/IqbalLx/EasyOCR-ONNX/issues"
+
+[project.scripts]
+easyocr-onnx = "easyocr_onnx.cli:main"
+
+[dependency-groups]
+dev = [
+    "easyocr>=1.7.2",
+    "ipykernel>=7.2.0",
+    "matplotlib>=3.10.8",
+    "onnx>=1.20.1",
+    "onnxruntime>=1.24.3",
+    "onnxscript>=0.6.2",
+    "opencv-python>=4.13.0.92",
+    "Pillow>=11.0.0",
+    "pytest>=8.0.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/easyocr_onnx"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
