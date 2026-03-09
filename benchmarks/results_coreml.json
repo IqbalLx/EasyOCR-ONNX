@@ -1,0 +1,290 @@
+{
+  "system": {
+    "platform": "macOS-26.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "python": "3.12.10",
+    "processor": "arm",
+    "peak_rss_mb": 3030.1
+  },
+  "config": {
+    "rounds": 5,
+    "warmup": 2,
+    "quick": true,
+    "onnx_providers": ["ONNX-CPU", "ONNX-CoreML"]
+  },
+  "benchmarks": [
+    {
+      "pytorch": {
+        "label": "init",
+        "backend": "pytorch",
+        "rounds": 5,
+        "mean_ms": 2124.25,
+        "median_ms": 2077.57,
+        "stdev_ms": 105.86,
+        "min_ms": 2074.21,
+        "max_ms": 2313.59,
+        "p95_ms": 2313.59
+      },
+      "ONNX-CPU": {
+        "label": "init",
+        "backend": "ONNX-CPU",
+        "rounds": 5,
+        "mean_ms": 48.67,
+        "median_ms": 27.63,
+        "stdev_ms": 39.03,
+        "min_ms": 26.38,
+        "max_ms": 117.05,
+        "p95_ms": 117.05
+      },
+      "ONNX-CoreML": {
+        "label": "init",
+        "backend": "ONNX-CoreML",
+        "rounds": 5,
+        "mean_ms": 716.61,
+        "median_ms": 620.39,
+        "stdev_ms": 212.25,
+        "min_ms": 582.68,
+        "max_ms": 1092.38,
+        "p95_ms": 1092.38
+      },
+      "speedup_vs_pytorch": {
+        "ONNX-CPU": 75.191,
+        "ONNX-CoreML": 3.349
+      }
+    },
+    {
+      "pytorch": {
+        "label": "readtext [small_320x240]",
+        "backend": "pytorch",
+        "rounds": 5,
+        "mean_ms": 236.57,
+        "median_ms": 236.94,
+        "stdev_ms": 4.57,
+        "min_ms": 232.15,
+        "max_ms": 243.41,
+        "p95_ms": 243.41
+      },
+      "ONNX-CPU": {
+        "label": "readtext [small_320x240]",
+        "backend": "ONNX-CPU",
+        "rounds": 5,
+        "mean_ms": 269.34,
+        "median_ms": 270.73,
+        "stdev_ms": 3.58,
+        "min_ms": 263.93,
+        "max_ms": 272.54,
+        "p95_ms": 272.54
+      },
+      "ONNX-CoreML": {
+        "label": "readtext [small_320x240]",
+        "backend": "ONNX-CoreML",
+        "rounds": 5,
+        "mean_ms": 150.02,
+        "median_ms": 150.07,
+        "stdev_ms": 1.3,
+        "min_ms": 148.25,
+        "max_ms": 151.8,
+        "p95_ms": 151.8
+      },
+      "speedup_vs_pytorch": {
+        "ONNX-CPU": 0.875,
+        "ONNX-CoreML": 1.579
+      }
+    },
+    {
+      "pytorch": {
+        "label": "readtext [medium_640x480]",
+        "backend": "pytorch",
+        "rounds": 5,
+        "mean_ms": 1089.0,
+        "median_ms": 1093.25,
+        "stdev_ms": 12.58,
+        "min_ms": 1074.38,
+        "max_ms": 1101.63,
+        "p95_ms": 1101.63
+      },
+      "ONNX-CPU": {
+        "label": "readtext [medium_640x480]",
+        "backend": "ONNX-CPU",
+        "rounds": 5,
+        "mean_ms": 928.27,
+        "median_ms": 930.05,
+        "stdev_ms": 14.99,
+        "min_ms": 908.94,
+        "max_ms": 948.78,
+        "p95_ms": 948.78
+      },
+      "ONNX-CoreML": {
+        "label": "readtext [medium_640x480]",
+        "backend": "ONNX-CoreML",
+        "rounds": 5,
+        "mean_ms": 305.87,
+        "median_ms": 305.41,
+        "stdev_ms": 2.15,
+        "min_ms": 303.56,
+        "max_ms": 308.75,
+        "p95_ms": 308.75
+      },
+      "speedup_vs_pytorch": {
+        "ONNX-CPU": 1.175,
+        "ONNX-CoreML": 3.58
+      }
+    },
+    {
+      "pytorch": {
+        "label": "detect [small_320x240]",
+        "backend": "pytorch",
+        "rounds": 5,
+        "mean_ms": 200.92,
+        "median_ms": 200.35,
+        "stdev_ms": 1.08,
+        "min_ms": 200.16,
+        "max_ms": 202.77,
+        "p95_ms": 202.77
+      },
+      "ONNX-CPU": {
+        "label": "detect [small_320x240]",
+        "backend": "ONNX-CPU",
+        "rounds": 5,
+        "mean_ms": 244.86,
+        "median_ms": 244.2,
+        "stdev_ms": 2.47,
+        "min_ms": 241.84,
+        "max_ms": 248.3,
+        "p95_ms": 248.3
+      },
+      "ONNX-CoreML": {
+        "label": "detect [small_320x240]",
+        "backend": "ONNX-CoreML",
+        "rounds": 5,
+        "mean_ms": 56.14,
+        "median_ms": 56.04,
+        "stdev_ms": 1.48,
+        "min_ms": 54.82,
+        "max_ms": 58.49,
+        "p95_ms": 58.49
+      },
+      "speedup_vs_pytorch": {
+        "ONNX-CPU": 0.82,
+        "ONNX-CoreML": 3.575
+      }
+    },
+    {
+      "pytorch": {
+        "label": "detect [medium_640x480]",
+        "backend": "pytorch",
+        "rounds": 5,
+        "mean_ms": 721.14,
+        "median_ms": 708.31,
+        "stdev_ms": 72.07,
+        "min_ms": 647.04,
+        "max_ms": 818.69,
+        "p95_ms": 818.69
+      },
+      "ONNX-CPU": {
+        "label": "detect [medium_640x480]",
+        "backend": "ONNX-CPU",
+        "rounds": 5,
+        "mean_ms": 925.2,
+        "median_ms": 923.26,
+        "stdev_ms": 12.23,
+        "min_ms": 909.75,
+        "max_ms": 940.25,
+        "p95_ms": 940.25
+      },
+      "ONNX-CoreML": {
+        "label": "detect [medium_640x480]",
+        "backend": "ONNX-CoreML",
+        "rounds": 5,
+        "mean_ms": 172.82,
+        "median_ms": 172.45,
+        "stdev_ms": 2.45,
+        "min_ms": 170.05,
+        "max_ms": 175.34,
+        "p95_ms": 175.34
+      },
+      "speedup_vs_pytorch": {
+        "ONNX-CPU": 0.767,
+        "ONNX-CoreML": 4.107
+      }
+    },
+    {
+      "pytorch": {
+        "label": "readtext [dense_1280x960]",
+        "backend": "pytorch",
+        "rounds": 3,
+        "mean_ms": 6115.83,
+        "median_ms": 6290.43,
+        "stdev_ms": 319.77,
+        "min_ms": 5746.77,
+        "max_ms": 6310.3,
+        "p95_ms": 6310.3
+      },
+      "ONNX-CPU": {
+        "label": "readtext [dense_1280x960]",
+        "backend": "ONNX-CPU",
+        "rounds": 3,
+        "mean_ms": 4565.07,
+        "median_ms": 4526.5,
+        "stdev_ms": 268.06,
+        "min_ms": 4318.38,
+        "max_ms": 4850.32,
+        "p95_ms": 4850.32
+      },
+      "ONNX-CoreML": {
+        "label": "readtext [dense_1280x960]",
+        "backend": "ONNX-CoreML",
+        "rounds": 3,
+        "mean_ms": 2653.82,
+        "median_ms": 2549.0,
+        "stdev_ms": 292.05,
+        "min_ms": 2428.64,
+        "max_ms": 2983.81,
+        "p95_ms": 2983.81
+      },
+      "speedup_vs_pytorch": {
+        "ONNX-CPU": 1.39,
+        "ONNX-CoreML": 2.468
+      }
+    },
+    {
+      "pytorch": {
+        "label": "throughput_8_images",
+        "backend": "pytorch",
+        "rounds": 1,
+        "mean_ms": 6052.77,
+        "median_ms": 6052.77,
+        "stdev_ms": 0.0,
+        "min_ms": 6052.77,
+        "max_ms": 6052.77,
+        "p95_ms": 6052.77
+      },
+      "ONNX-CPU": {
+        "label": "throughput_8_images",
+        "backend": "ONNX-CPU",
+        "rounds": 1,
+        "mean_ms": 8975.58,
+        "median_ms": 8975.58,
+        "stdev_ms": 0.0,
+        "min_ms": 8975.58,
+        "max_ms": 8975.58,
+        "p95_ms": 8975.58
+      },
+      "ONNX-CoreML": {
+        "label": "throughput_8_images",
+        "backend": "ONNX-CoreML",
+        "rounds": 1,
+        "mean_ms": 2948.76,
+        "median_ms": 2948.76,
+        "stdev_ms": 0.0,
+        "min_ms": 2948.76,
+        "max_ms": 2948.76,
+        "p95_ms": 2948.76
+      },
+      "speedup_vs_pytorch": {
+        "ONNX-CPU": 0.674,
+        "ONNX-CoreML": 2.053
+      }
+    }
+  ]
+}
